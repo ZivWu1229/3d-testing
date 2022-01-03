@@ -1,5 +1,4 @@
 from ursina import *
-from ursina import collider
 from ursina.prefabs.first_person_controller import FirstPersonController
 
 app = Ursina()
@@ -8,14 +7,14 @@ obj = []
 
 class Floor(Entity):
     def __init__(self, pos=(0,0,0), side='d'):
+        global rotations
         super().__init__(
             parent=scene,
             model='plane',
-            collision=True,
-            collider='plane',
-            scale=(10,1,10),
-            rotation=self.rotation[side],
-            position=pos
+            scale=(5,1,5),
+            rotation=rotations[side],
+            position=pos,
+            texture='planks'
         )
 
 obj = Floor()

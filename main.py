@@ -29,7 +29,8 @@ class Floor(Button):
             position=pos,
             texture='planks',
             highlight_color=color.rgba(50,50,255,100),
-            color=color.white
+            color=color.white,
+            collider=Quad(scale=(1,1,1))
         )
     def on_click(self):
         pass
